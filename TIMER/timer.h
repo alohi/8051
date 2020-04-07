@@ -13,7 +13,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Library for 8051.  If not, see <http://www.gnu.org/licenses/>.
-/**************************************************************************************************************/
+**************************************************************************************************************/
 
 /***
 **   File       : timer.h
@@ -67,9 +67,9 @@
 #define TIMER_0_1_MODE_3 0x00
 
 
-extern timerBegin(unsigned char,unsigned char,unsigned long);//,unsigned char); // Timer Number, Timer Value (in milliseconds), Timer Mode, Oscillator Frequency
-extern timerStart(unsigned char,unsigned char);                   // Timer Number, Interrupts (Enabled,Disabled);
-extern timerStop(unsigned char);                                   // Timer Number (It will also disable interrupts)
+extern void timerBegin(unsigned char,unsigned char,unsigned long);//,unsigned char); // Timer Number, Timer Value (in milliseconds), Timer Mode, Oscillator Frequency
+extern void timerStart(unsigned char,unsigned char);                   // Timer Number, Interrupts (Enabled,Disabled);
+extern void timerStop(unsigned char);                                   // Timer Number (It will also disable interrupts)
 
 
 #ifdef ENABLE_TIMER_0_INTERRUPT
@@ -81,12 +81,11 @@ extern void timer0ISR(void) interrupt(1);
 #else
 #error "Invalid Toolchain, Please check 'TOOLCHAIN' macro (SDCC/KEIL)"
 #endif
-extern unsigned int TimerCount0;
+
+extern volatile unsigned int TimerCount0;
 
 #endif
 
 /*extern unsigned int TimerCount1;
 extern unsigned int TimerCount2;*/
-#endif
-
 #endif
