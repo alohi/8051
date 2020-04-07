@@ -13,7 +13,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Library for 8051.  If not, see <http://www.gnu.org/licenses/>.
-/**************************************************************************************************************/
+**************************************************************************************************************/
 
 /***
 **   File       : timer.c
@@ -58,8 +58,8 @@ if(TimerNo == TIMER0)
 {
 if(_inter == 1)
 {
-IE_1 = 1;
-EA   = 1
+ET0  = 1;
+EA   = 1;
 }
 TR0 = 1;
 }
@@ -67,8 +67,8 @@ else if(TimerNo == TIMER1)
 {
 if(_inter == 1)
 {
-IE_3 = 1;
-EA   = 1
+ET1  = 1;
+EA   = 1;
 }
 TR1 = 1;
 }
@@ -84,12 +84,12 @@ void timerStop(unsigned char TimerNo)
 if(TimerNo == TIMER0)
 {
 TR0  = 0;
-IE_1 = 0; 
+ET0  = 0;
 }
 else if(TimerNo == TIMER1)
 {
 TR1  = 0;
-IE_3 = 0; 
+ET1  = 0;
 }
 }
 
