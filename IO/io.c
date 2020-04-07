@@ -13,7 +13,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Library for 8051.  If not, see <http://www.gnu.org/licenses/>.
-/**************************************************************************************************************/
+**************************************************************************************************************/
 
 
 
@@ -48,7 +48,7 @@ case 6 : if(PinState) PORT0OUT |= 1 << 6; else PORT0OUT &= (1 << 6); break;
 case 7 : if(PinState) PORT0OUT |= 1 << 7; else PORT0OUT &= (1 << 7); break;
 }
 }
-else if (PiNo < (IO_MAX * 2) && (PiNo > (IO_MAX)))
+else if (PinNo < (IO_MAX * 2) && (PinNo > (IO_MAX)))
 {
 switch(PinNo % IO_MAX)
 {
@@ -60,10 +60,9 @@ case 4 : if(PinState) PORT1OUT |= 1 << 4; else PORT1OUT &= (1 << 4); break;
 case 5 : if(PinState) PORT1OUT |= 1 << 5; else PORT1OUT &= (1 << 5); break;
 case 6 : if(PinState) PORT1OUT |= 1 << 6; else PORT1OUT &= (1 << 6); break;
 case 7 : if(PinState) PORT1OUT |= 1 << 7; else PORT1OUT &= (1 << 7); break;
-case 7 : if(PinState) PORT1OUT |= 1 << 7; else PORT1OUT &= (1 << 7); break;
 }
 }
-else if (PiNo < (IO_MAX * 3)  && (PiNo > (IO_MAX * 2)))
+else if (PinNo < (IO_MAX * 3)  && (PinNo > (IO_MAX * 2)))
 {
 switch(PinNo % IO_MAX)
 {
@@ -77,7 +76,7 @@ case 6 : if(PinState) PORT2OUT |= 1 << 6; else PORT2OUT &= (1 << 6); break;
 case 7 : if(PinState) PORT2OUT |= 1 << 7; else PORT2OUT &= (1 << 7); break;
 }
 }
-else if (PiNo < (IO_MAX * 4)  && (PiNo > (IO_MAX * 3)))
+else if (PinNo < (IO_MAX * 4)  && (PinNo > (IO_MAX * 3)))
 {
 switch(PinNo % IO_MAX)
 {
@@ -114,7 +113,7 @@ case 6 : if(PORT0IN & 0x40) return HIGH; else return LOW;
 case 7 : if(PORT0IN & 0x80) return HIGH; else return LOW;
 }
 }
-else if (PiNo < (IO_MAX * 2)  && (PiNo > (IO_MAX)))
+else if (PinNo < (IO_MAX * 2)  && (PinNo > (IO_MAX)))
 {
 switch(PinNo % IO_MAX)
 {
@@ -128,7 +127,7 @@ case 6 : if(PORT1IN & 0x40) return HIGH; else return LOW;
 case 7 : if(PORT1IN & 0x80) return HIGH; else return LOW;
 }
 }
-else if (PiNo < (IO_MAX * 3)  && (PiNo > (IO_MAX * 2)))
+else if (PinNo < (IO_MAX * 3)  && (PinNo > (IO_MAX * 2)))
 {
 switch(PinNo % IO_MAX)
 {
@@ -142,7 +141,7 @@ case 6 : if(PORT2IN & 0x40) return HIGH; else return LOW;
 case 7 : if(PORT2IN & 0x80) return HIGH; else return LOW;
 }
 }
-else if (PiNo < (IO_MAX * 4)  && (PiNo > (IO_MAX * 3)))
+else if (PinNo < (IO_MAX * 4)  && (PinNo > (IO_MAX * 3)))
 {
 switch(PinNo % IO_MAX)
 {
@@ -169,57 +168,56 @@ if(PinNo < IO_MAX)
 {
 switch(PinNo % IO_MAX)
 {
-case 0 : if(PinState) PORT0DIR |= 1 << 0; else PORT0DIR &= (1 << 0); break;
-case 1 : if(PinState) PORT0DIR |= 1 << 1; else PORT0DIR &= (1 << 1); break;
-case 2 : if(PinState) PORT0DIR |= 1 << 2; else PORT0DIR &= (1 << 2); break;
-case 3 : if(PinState) PORT0DIR |= 1 << 3; else PORT0DIR &= (1 << 3); break;
-case 4 : if(PinState) PORT0DIR |= 1 << 4; else PORT0DIR &= (1 << 4); break;
-case 5 : if(PinState) PORT0DIR |= 1 << 5; else PORT0DIR &= (1 << 5); break;
-case 6 : if(PinState) PORT0DIR |= 1 << 6; else PORT0DIR &= (1 << 6); break;
-case 7 : if(PinState) PORT0DIR |= 1 << 7; else PORT0DIR &= (1 << 7); break;
+case 0 : if(PinDirection) PORT0DIR |= 1 << 0; else PORT0DIR &= (1 << 0); break;
+case 1 : if(PinDirection) PORT0DIR |= 1 << 1; else PORT0DIR &= (1 << 1); break;
+case 2 : if(PinDirection) PORT0DIR |= 1 << 2; else PORT0DIR &= (1 << 2); break;
+case 3 : if(PinDirection) PORT0DIR |= 1 << 3; else PORT0DIR &= (1 << 3); break;
+case 4 : if(PinDirection) PORT0DIR |= 1 << 4; else PORT0DIR &= (1 << 4); break;
+case 5 : if(PinDirection) PORT0DIR |= 1 << 5; else PORT0DIR &= (1 << 5); break;
+case 6 : if(PinDirection) PORT0DIR |= 1 << 6; else PORT0DIR &= (1 << 6); break;
+case 7 : if(PinDirection) PORT0DIR |= 1 << 7; else PORT0DIR &= (1 << 7); break;
 }
 }
-else if (PiNo < (IO_MAX * 2)  && (PiNo > (IO_MAX)))
+else if (PinNo < (IO_MAX * 2)  && (PinNo > (IO_MAX)))
 {
 switch(PinNo % IO_MAX)
 {
-case 0 : if(PinState) PORT1DIR |= 1 << 0; else PORT1DIR &= (1 << 0); break;
-case 1 : if(PinState) PORT1DIR |= 1 << 1; else PORT1DIR &= (1 << 1); break;
-case 2 : if(PinState) PORT1DIR |= 1 << 2; else PORT1DIR &= (1 << 2); break;
-case 3 : if(PinState) PORT1DIR |= 1 << 3; else PORT1DIR &= (1 << 3); break;
-case 4 : if(PinState) PORT1DIR |= 1 << 4; else PORT1DIR &= (1 << 4); break;
-case 5 : if(PinState) PORT1DIR |= 1 << 5; else PORT1DIR &= (1 << 5); break;
-case 6 : if(PinState) PORT1DIR |= 1 << 6; else PORT1DIR &= (1 << 6); break;
-case 7 : if(PinState) PORT1DIR |= 1 << 7; else PORT1DIR &= (1 << 7); break;
-case 7 : if(PinState) PORT1DIR |= 1 << 7; else PORT1DIR &= (1 << 7); break;
+case 0 : if(PinDirection) PORT1DIR |= 1 << 0; else PORT1DIR &= (1 << 0); break;
+case 1 : if(PinDirection) PORT1DIR |= 1 << 1; else PORT1DIR &= (1 << 1); break;
+case 2 : if(PinDirection) PORT1DIR |= 1 << 2; else PORT1DIR &= (1 << 2); break;
+case 3 : if(PinDirection) PORT1DIR |= 1 << 3; else PORT1DIR &= (1 << 3); break;
+case 4 : if(PinDirection) PORT1DIR |= 1 << 4; else PORT1DIR &= (1 << 4); break;
+case 5 : if(PinDirection) PORT1DIR |= 1 << 5; else PORT1DIR &= (1 << 5); break;
+case 6 : if(PinDirection) PORT1DIR |= 1 << 6; else PORT1DIR &= (1 << 6); break;
+case 7 : if(PinDirection) PORT1DIR |= 1 << 7; else PORT1DIR &= (1 << 7); break;
 }
 }
-else if (PiNo < (IO_MAX * 3)  && (PiNo > (IO_MAX * 2)))
+else if (PinNo < (IO_MAX * 3)  && (PinNo > (IO_MAX * 2)))
 {
 switch(PinNo % IO_MAX)
 {
-case 0 : if(PinState) PORT2DIR |= 1 << 0; else PORT2DIR &= (1 << 0); break;
-case 1 : if(PinState) PORT2DIR |= 1 << 1; else PORT2DIR &= (1 << 1); break;
-case 2 : if(PinState) PORT2DIR |= 1 << 2; else PORT2DIR &= (1 << 2); break;
-case 3 : if(PinState) PORT2DIR |= 1 << 3; else PORT2DIR &= (1 << 3); break;
-case 4 : if(PinState) PORT2DIR |= 1 << 4; else PORT2DIR &= (1 << 4); break;
-case 5 : if(PinState) PORT2DIR |= 1 << 5; else PORT2DIR &= (1 << 5); break;
-case 6 : if(PinState) PORT2DIR |= 1 << 6; else PORT2DIR &= (1 << 6); break;
-case 7 : if(PinState) PORT2DIR |= 1 << 7; else PORT2DIR &= (1 << 7); break;
+case 0 : if(PinDirection) PORT2DIR |= 1 << 0; else PORT2DIR &= (1 << 0); break;
+case 1 : if(PinDirection) PORT2DIR |= 1 << 1; else PORT2DIR &= (1 << 1); break;
+case 2 : if(PinDirection) PORT2DIR |= 1 << 2; else PORT2DIR &= (1 << 2); break;
+case 3 : if(PinDirection) PORT2DIR |= 1 << 3; else PORT2DIR &= (1 << 3); break;
+case 4 : if(PinDirection) PORT2DIR |= 1 << 4; else PORT2DIR &= (1 << 4); break;
+case 5 : if(PinDirection) PORT2DIR |= 1 << 5; else PORT2DIR &= (1 << 5); break;
+case 6 : if(PinDirection) PORT2DIR |= 1 << 6; else PORT2DIR &= (1 << 6); break;
+case 7 : if(PinDirection) PORT2DIR |= 1 << 7; else PORT2DIR &= (1 << 7); break;
 }
 }
-else if (PiNo < (IO_MAX * 4)  && (PiNo > (IO_MAX * 3)))
+else if (PinNo < (IO_MAX * 4)  && (PinNo > (IO_MAX * 3)))
 {
 switch(PinNo % IO_MAX)
 {
-case 0 : if(PinState) PORT3DIR |= 1 << 0; else PORT3DIR &= (1 << 0); break;
-case 1 : if(PinState) PORT3DIR |= 1 << 1; else PORT3DIR &= (1 << 1); break;
-case 2 : if(PinState) PORT3DIR |= 1 << 2; else PORT3DIR &= (1 << 2); break;
-case 3 : if(PinState) PORT3DIR |= 1 << 3; else PORT3DIR &= (1 << 3); break;
-case 4 : if(PinState) PORT3DIR |= 1 << 4; else PORT3DIR &= (1 << 4); break;
-case 5 : if(PinState) PORT3DIR |= 1 << 5; else PORT3DIR &= (1 << 5); break;
-case 6 : if(PinState) PORT3DIR |= 1 << 6; else PORT3DIR &= (1 << 6); break;
-case 7 : if(PinState) PORT3DIR |= 1 << 7; else PORT3DIR &= (1 << 7); break;
+case 0 : if(PinDirection) PORT3DIR |= 1 << 0; else PORT3DIR &= (1 << 0); break;
+case 1 : if(PinDirection) PORT3DIR |= 1 << 1; else PORT3DIR &= (1 << 1); break;
+case 2 : if(PinDirection) PORT3DIR |= 1 << 2; else PORT3DIR &= (1 << 2); break;
+case 3 : if(PinDirection) PORT3DIR |= 1 << 3; else PORT3DIR &= (1 << 3); break;
+case 4 : if(PinDirection) PORT3DIR |= 1 << 4; else PORT3DIR &= (1 << 4); break;
+case 5 : if(PinDirection) PORT3DIR |= 1 << 5; else PORT3DIR &= (1 << 5); break;
+case 6 : if(PinDirection) PORT3DIR |= 1 << 6; else PORT3DIR &= (1 << 6); break;
+case 7 : if(PinDirection) PORT3DIR |= 1 << 7; else PORT3DIR &= (1 << 7); break;
 }
 }
 }
