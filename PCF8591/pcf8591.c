@@ -23,7 +23,6 @@
 **   Description: This is the PCF8591 driver file with 8051
 ***/
 
-<<<<<<< HEAD
 
 void begin(void)
 {
@@ -41,11 +40,3 @@ return i2cread(ADC_CH_2);
 else if(ch == ADC_CH_3)
 return i2cread(ADC_CH_3);
 }
-
-void analogWrite(int __val)
-{
-
-}
-
-=======
->>>>>>> 7b87dc8e7aacf5e30416c903205ba0a92e66d671
