@@ -1,6 +1,6 @@
 Library for 8051 is free software for 8051 family MCU's
 
-For Copying and licence information pleae see 'COPYING' and 'LICENCE' file
+For Copying and licence information please see 'COPYING' and 'LICENCE' file
 
 Development Tools Required
 Toolchain    : SDCC (Opensource toolchain for 8051/PIC Controllers) 
